@@ -1,0 +1,112 @@
+@import './core/colors';
+@import './components/button';
+@import './components/spinner';
+
+nav {
+    background-color: $color-orange;
+    padding: .500em 0;
+
+    .logo {
+        a {
+            h1 {
+                color: $color-white;
+            }
+        }
+    }
+
+    .menus {
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+
+        li {
+            &:not(:last-child) {
+                margin-right: 1.500em;
+            }
+
+            a {
+                color: $color-white;
+            }
+        }
+    }
+}
+
+.card {
+    padding: 2.000em;
+    @include shadow(soft);
+}
+
+section {
+    .container {
+        .descriptive {
+			&[layer='form'] {
+				h2 {
+					margin-top: 2.000em;
+				}
+				form {
+					margin-top: 1.000em;
+					.group {
+						display: flex;
+						flex-wrap: wrap;
+						&:not(:last-child) {
+							margin-bottom: 1.500em;
+						}
+						label, input {
+							flex-basis: 100%;
+						}
+						label {
+							margin-bottom: .600em;
+						}
+						input {
+							padding: 1.000em;
+							border:none;
+							outline:none;
+							font-size: 1.000em;
+							@include shadow(soft);
+							@include shape(radius);
+						}
+					}
+				}
+			}
+            &[layer='posts'] {
+				h2 {
+					margin-top: 2.000em;
+				}
+                .posts {
+					margin: 0 -1.000em;
+					margin-top: 1.000em;
+                    .row {
+                        .column {
+                            .post {
+								padding: 0 1.000em 2.000em 1.000em;
+								.card {
+									@include transition(all, .5s, ease);
+									&:hover {
+										@include transform(scale, 1.02);
+									}
+									hr {
+										margin: .200em 0 .500em 0;
+									}
+									.buttons {
+										margin-top: .800em;
+										button {
+											background-color: $color-shopee;
+											color: $color-white;
+											text-transform: uppercase;
+											&:first-child {
+												margin-right: .500em;
+											}
+											&:last-child {
+												background-color: $color-red;
+											}
+										}
+									}
+								}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

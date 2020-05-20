@@ -1,0 +1,16 @@
+button {
+	font-family: 'Lato', sans-serif;
+	padding: .800em 1.000em;
+	border: none;
+	outline: none;
+	background-color: #f1f2f6;
+	@include shape(radius);
+	@include transition(all, .5s, ease);
+	&:hover {
+		cursor: pointer;
+		@include transform(scale, 1.02);
+	}
+	&:active {
+		@include transform(scale, .97);
+	}
+}
